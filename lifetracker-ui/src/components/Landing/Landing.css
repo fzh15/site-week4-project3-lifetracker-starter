@@ -1,0 +1,25 @@
+/* .hero-img{
+    align-items: right;
+    float: left;
+    margin-right: 10px; 
+} */
+
+.landing-page {
+
+    padding-bottom: 30%;
+    margin-top: 10%;
+    margin-left: 10%;
+  }
+  
+  .hero-img {
+    margin-top: 1%;
+
+    float: right;
+    /* Optional styles for image, e.g., width, height, margin, etc. */
+  }
+
+.landing-page-text{
+    text-align: left;
+    font-weight: 200;
+
+  }

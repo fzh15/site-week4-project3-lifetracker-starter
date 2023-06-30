@@ -1,0 +1,24 @@
+.nav-links {
+    display: flex;
+    color: red;
+  }
+  
+  .nav-links a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+  }
+  
+  .logout-button {
+    flex: 1;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: red;
+
+  }
+  

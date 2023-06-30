@@ -1,6 +1,60 @@
-.tiles {
+/* .sections {
   display: flex;
-  align-items: center;
-  width: 100%;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
+
+.sections h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.sections img {
+  width: 100%;
+  height: auto;
+  max-width: 400px; 
+  margin-bottom: 20px;
+} */
+
+
+ 
+/* .sections{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 25px;
+
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  border-radius: 50px;
+
+  
+}
+
+ img {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+} */
+
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: column;
+}
+
+.sections h1 {
+  width: 100%;
+  text-align: column;
+}
+
+.sections img {
+  width: 100%;
+  height: auto;
+  max-width: 400px; 
+  margin-bottom: 20px;
+} 
