@@ -2,11 +2,17 @@ import React from 'react'
 import RegistrationForm from "../RegistrationForm/RegistrationForm"
 
 
-function RegistrationPage() {
+function RegistrationPage({onRegister}) {
   return (
     
   <div>
-        <RegistrationForm/> 
+
+<br></br>
+    <br></br>
+    <br></br>
+        <RegistrationForm
+        
+        onRegister= {onRegister}/> 
 
 
 

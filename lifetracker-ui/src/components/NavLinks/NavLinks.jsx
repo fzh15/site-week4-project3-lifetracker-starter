@@ -2,23 +2,29 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "./NavLinks.css"
 
-function NavLinks({isLoggedIn}) {
-
+function NavLinks({isLoggedIn, setisLoggedIn}) {
+  console.log(isLoggedIn)
     const logoutUser= ()=>{
-        //should remove `lifetracker_token`
-        localStorage.removeItem(`lifetracker_token`);
-        window.location.reload(); //refreshs the pages 
-
+        //should remove `lifetracker_`
+        localStorage.removeItem(`lifetracker_`);
+        setisLoggedIn(false)
+        // window.location.reload(); //refreshs the pages 
     }
   return (
     <div className='nav-links'>
 
         <Link to="/activity">Activity</Link>
         <Link to="/nutrition">Nutrition</Link>
+        <Link to="/exercise">Exercise</Link>
+        <Link to="/sleep"> Sleep </Link> 
+
+
 
         {isLoggedIn ? (
 
-        <button className='logout-button' onClick={logoutUser}> </button>
+          //write a messae that gives a  welcome message on the header of the page 
+
+        <button className='logout-button' onClick={logoutUser}> Log Out </button>
         
         ):(
         <>  

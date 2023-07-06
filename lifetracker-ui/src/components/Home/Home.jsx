@@ -4,7 +4,13 @@ import "./Home.css"
 function Home() {
   return (
     <div className='sections'>
+
+      <div className='text'>
+
         <h1>Fitness </h1>
+
+
+      </div>
             <img className='Fitness'
                 src= "https://cdn.pixabay.com/photo/2017/05/25/15/08/jogging-2343558_1280.jpg "
                 alt= "Fitness"
@@ -12,13 +18,14 @@ function Home() {
 
             </img>
 
-        <h1> Food </h1>
 
+        <h1> Food </h1>
                 <img className='Food'
                 src= "https://www.eatingwell.com/thmb/m5xUzIOmhWSoXZnY-oZcO9SdArQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/article_291139_the-top-10-healthiest-foods-for-kids_-02-4b745e57928c4786a61b47d8ba920058.jpg"
                 label= " Food"
                 alt= "Food"
-                width="600" height="600"> 
+                width="600" height="600"
+                > 
 
                 </img>
 

@@ -11,7 +11,9 @@ const RegistrationForm = ({ onRegister }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onRegister( Email, Password);
+    console.log("password: ", Password)
+
+    onRegister(FirstName, LastName, Username, Email, Password);
   };
 
   return (
@@ -71,7 +73,7 @@ const RegistrationForm = ({ onRegister }) => {
           <label>PasswordConfirm: </label>
           <input className="form-input"
             name = "Password Confirm"
-            type="text"
+            type="password"
             value={PasswordConfirm}
             onChange={(e) => setPasswordConfirm(e.target.value)}
             required

@@ -1,4 +1,6 @@
 import React from 'react'
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import Home from "../Home/Home"
 import "./Landing.css"
 
 function Landing() {
@@ -19,6 +21,14 @@ function Landing() {
         in tracking their health.
 
       </h2>
+
+      <br></br>
+      <br></br>
+
+      <br></br>
+
+      <Home/>
+
     </div>
   )
 }

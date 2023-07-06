@@ -1,8 +1,22 @@
 import React from 'react'
+import SleepForm from '../SleepForm/SleepForm'
+
 
 function SleepPage() {
   return (
-    <div>SleepPage</div>
+    <div className='SleepForm'>
+
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+
+    <h1>   Record Your Sleep </h1>
+    
+    <SleepForm/>
+    </div>
   )
 }
 

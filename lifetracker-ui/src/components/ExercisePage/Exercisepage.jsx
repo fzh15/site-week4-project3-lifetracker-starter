@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Exercisepage() {
+function ExercisePage() {
   return (
-    <div>Exercisepage</div>
+    <div>Exercise Page</div>
   )
 }
 
-export default Exercisepage
+export default ExercisePage

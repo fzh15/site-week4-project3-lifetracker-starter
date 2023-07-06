@@ -3,13 +3,19 @@ import LoginForm from '../LoginForm/LoginForm'
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 
 
-function LoginPage() {
+function LoginPage({handleLogin}) {
   // const[isLoggedIn, setisLoggenIn]= useState(false)
   return (
     <div className='login-page'>
     
+    <br></br>
+    <br></br>
+    <br></br>
+
+    <LoginForm
     
-    {/* <LoginForm/> */}
+    handleLogin={handleLogin}/>
+    
 
     </div>
   )
