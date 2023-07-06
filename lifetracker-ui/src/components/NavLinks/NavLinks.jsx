@@ -6,7 +6,7 @@ function NavLinks({isLoggedIn, setisLoggedIn}) {
   console.log(isLoggedIn)
     const logoutUser= ()=>{
         //should remove `lifetracker_`
-        localStorage.removeItem(`lifetracker_`);
+        localStorage.removeItem(`lifetracker_token`);
         setisLoggedIn(false)
         // window.location.reload(); //refreshs the pages 
     }

@@ -35,7 +35,9 @@ const[userName, setUserName] = useState("")
   
   useEffect(() => {
     const checkLoggedIn = () => {
-      const token = Cookies.get("token");
+      // const token = Cookies.get("token");
+      const token = localStorage.getItem("lifetracker_token");
+      console.log(token)
       if (token) {
         const decodedToken = jwtDecode(token);
         setUserName(decodedToken.userName); //get username
@@ -103,10 +105,11 @@ const handleLogin = async (email, password) => {
     });
 
     const data = await response.json();
-
+    console.log(data, response)
     if (response.ok) {
-      const { token } = response.data;
-      Cookies.set("token", token); // Set the token as a cookie
+      const { token } = data;
+      // Cookies.set("token", token); // Set the token as a cookie
+      localStorage.setItem("lifetracker_token", token)
       //Successful Login
       setisLoggedIn(true);
       setLoginError(""); 
