@@ -1,5 +1,12 @@
 # Project #3: LifeTracker Application
 
+
+<a href="https://www.loom.com/share/94cfd5c6fbe341fabe240f639fd51849">
+    <p>Loom Message - 8 July 2023 - Watch Video</p>
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/94cfd5c6fbe341fabe240f639fd51849-with-play.gif">
+  </a>
+
+  
 ## Overview
 
 > Data is the new oil - Clive Humbly
@@ -89,22 +96,22 @@ Implement any of the following features to improve the application:
 
 Update the `App` component to manage authentication state:
 
-- [ ] Create a state variable called `appState` with a function called `setAppState` to update that state.
-  - [ ] Initialize `appState` with an object containing properties like `user`, `isAuthenticated`, `nutrition`, `sleep`, and `exercise`.
-- [ ] Implement a `useEffect` hook to fetch the user data.
-  - [ ] Define an asynchronous function named `fetchUser` to fetch the user data.
-    - [ ] Inside the `fetchUser` function, retrieve a token from `localStorage` using `localStorage.getItem("lifetracker_token")`
-    - [ ] Call the `setToken` function from the `apiClient.js` file.
-    - [ ] Make an API call to fetch user data using the `fetchUser` function from the `apiClient.js` file and extract the `data` from the response.
-    - [ ] If `data` is not null and not undefined, update the component's state using the `setAppState` function. Pass a callback to `setAppState` that takes the previous state and returns a new state object.
-    - [ ] In the callback, use the spread operator (`...`) to copy the previous state's properties to the new state object.
-    - [ ] Assign the following properties from the `data` object to the new state object:
-      - [ ] `user`
-      - [ ] `token`
-    - [ ] Assign at least **one** of the following properties from the `data` object to the new state object:
+- [x ] Create a state variable called `appState` with a function called `setAppState` to update that state.
+  - [ x] Initialize `appState` with an object containing properties like `user`, `isAuthenticated`, `nutrition`, `sleep`, and `exercise`.
+- [x ] Implement a `useEffect` hook to fetch the user data.
+  - [ x] Define an asynchronous function named `fetchUser` to fetch the user data.
+    - [x ] Inside the `fetchUser` function, retrieve a token from `localStorage` using `localStorage.getItem("lifetracker_token")`
+    - [x ] Call the `setToken` function from the `apiClient.js` file.
+    - [x ] Make an API call to fetch user data using the `fetchUser` function from the `apiClient.js` file and extract the `data` from the response.
+    - [x] If `data` is not null and not undefined, update the component's state using the `setAppState` function. Pass a callback to `setAppState` that takes the previous state and returns a new state object.
+    - [ x] In the callback, use the spread operator (`...`) to copy the previous state's properties to the new state object.
+    - [x ] Assign the following properties from the `data` object to the new state object:
+      - [x ] `user`
+      - [x] `token`
+    - [ x] Assign at least **one** of the following properties from the `data` object to the new state object:
       - [ ] `nutrition`
       - [ ] `exercise`
-      - [ ] `sleep`
+      - [x ] `sleep`
     - [ ] Call the `setAppState` with a new state object to update the component's state.
     - [ ] Outside the `fetchUser` function, call `fetchUser` to trigger the initial data fetch when the component mounts.
     - [ ] The effect should be triggered whenever the value of `appState.isAuthenticated` changes.
@@ -117,17 +124,17 @@ Update the `App` component to manage authentication state:
 
 #### Implement the `Navbar` Component
 
-- [ ] Build the **`Navbar`** component to:
+- [ x] Build the **`Navbar`** component to:
   - [x ] Render JSX that is wrapped by a `nav` element with the class name of `navbar`
   - [x ] Render the app's logo as an element with the class name of `logo`.
     - [x ] Inside that element should be a `Link` component from `react-router-dom` that navigates the user to the `/` route when clicked.
     - [x ] Inside that `Link` component should be the application's logo (text or image).
-  - [ ] Render the `NavLinks.jsx` component with links to each of the resources and the `/activity` route.
+  - [ x] Render the `NavLinks.jsx` component with links to each of the resources and the `/activity` route.
 
 #### Implement the `NavLinks` Component
 
-- [ ] Build the **`NavLinks`** component to:
-  - [ ] Render JSX that is wrapped by an element with the class name of `nav-links`
+- [x ] Build the **`NavLinks`** component to:
+  - [ x] Render JSX that is wrapped by an element with the class name of `nav-links`
   - [ x] Render a `Link` element from `react-router-dom` for:
     - [x ] The `/activity` route with a label of `Activity`.
     - [x ] The `/nutrition` route with a label of `Nutrition`.
@@ -160,15 +167,15 @@ Update the `App` component to manage authentication state:
 
 #### Implement the `LoginPage` Component
 
-- [ ] Build the **`LoginPage`** component to:
-  - [ ] Render JSX that is wrapped by an element with the class name of `login-page`
-  - [ ] Using either a custom hook, context, or manually set state, check to see if a user is already logged in
-    - [ ] If the user is already logged in, redirect them to the `/activity` page.
-    - [ ] If no user is authenticated, render the `LoginForm` component and pass it any props it needs.
+- [ x] Build the **`LoginPage`** component to:
+  - [x ] Render JSX that is wrapped by an element with the class name of `login-page`
+  - [x ] Using either a custom hook, context, or manually set state, check to see if a user is already logged in
+    - [x ] If the user is already logged in, redirect them to the `/activity` page.
+    - [x ] If no user is authenticated, render the `LoginForm` component and pass it any props it needs.
 
 #### Implement the `RegistrationForm` Component
 
-- [ ] Build the **`RegistrationForm`** component to:
+- [ x] Build the **`RegistrationForm`** component to:
   - [x ] Render JSX that is wrapped by an element with the class name of `registration-form`
   - [ x] Should render an input element for the following fields:
     - [ x] `email`
@@ -193,11 +200,11 @@ Update the `App` component to manage authentication state:
 
 #### Implement the `RegistrationPage` component
 
-- [ ] Build the **`RegistrationPage`** component to:
-  - [ ] Render JSX that is wrapped by an element with the class name of `registration-page`
-  - [ ] Using either a custom hook, context, or manually handled state, check to see if a user is already logged in
-    - [ ] If the user is already logged in, it should redirect them to the `/activity` page
-    - [ ] If no user is authenticated, it should render the `RegistrationForm` component and pass it any props it needs
+- [ x] Build the **`RegistrationPage`** component to:
+  - [ x] Render JSX that is wrapped by an element with the class name of `registration-page`
+  - [ x] Using either a custom hook, context, or manually handled state, check to see if a user is already logged in
+    - [x ] If the user is already logged in, it should redirect them to the `/activity` page
+    - [x ] If no user is authenticated, it should render the `RegistrationForm` component and pass it any props it needs
 
 #### Implement the `LandingPage` Component
 
@@ -210,26 +217,26 @@ Update the `App` component to manage authentication state:
 
 #### Implement the `ActivityPage` Component
 
-- [ ] Build the **`ActivityPage`** component to:
-  - [ ] Render JSX that is wrapped by an element with the class name of `activity-page`
-  - [ ] Take the `appState` and `setAppState` as props and extract all the necessary data from it.
-  - [ ] If the `isProcessing` flag is `true`, it should render the `Loading` component.
-  - [ ] If the `isProcessing` flag is `false`, it should render the `ActivityFeed` component and pass it the appropriate props.
+- [x ] Build the **`ActivityPage`** component to:
+  - [x ] Render JSX that is wrapped by an element with the class name of `activity-page`
+  - [x ] Take the `appState` and `setAppState` as props and extract all the necessary data from it.
+  - [ x] If the `isProcessing` flag is `true`, it should render the `Loading` component.
+  - [ x] If the `isProcessing` flag is `false`, it should render the `ActivityFeed` component and pass it the appropriate props.
 
 #### Implement the `ActivityFeed` Component
 
-- [ ] Build the **`ActivityFeed`** component to:
-  - [ ] Render JSX that is wrapped by an element with the class name of `activity-feed`
-  - [ ] Accept **at least** the following props:
-    - [ ] `totalCaloriesPerDay` - an array of items containing summary data about the total calories consumed per day
-    - [ ] `avgCaloriesPerCategory` - an array of items containing summary data about the average calories consumed per category
-    - [ ] Any other props as needed
-  - [ ] Inside an element with the class name of `per-category`, it should:
-    - [ ] Render the text: `"Average Calories Per Category` inside an `h4` element
-    - [ ] Take the first `6` or less items in the `avgCaloriesPerCategory` array and render a `SummaryStat` component for each item.
-      - [ ] Pass the calories **rounded down to one decimal place** as the `stat` prop
-      - [ ] Pass the string of `calories` as the `label` prop
-      - [ ] Pass the `category` as the `substat` prop
+- [x ] Build the **`ActivityFeed`** component to:
+  - [x ] Render JSX that is wrapped by an element with the class name of `activity-feed`
+  - [ x] Accept **at least** the following props:
+    - [x ] `totalCaloriesPerDay` - an array of items containing summary data about the total calories consumed per day
+    - [x ] `avgCaloriesPerCategory` - an array of items containing summary data about the average calories consumed per category
+    - [x ] Any other props as needed
+  - [x ] Inside an element with the class name of `per-category`, it should:
+    - [x ] Render the text: `"Average Calories Per Category` inside an `h4` element
+    - [ x] Take the first `6` or less items in the `avgCaloriesPerCategory` array and render a `SummaryStat` component for each item.
+      - [ x] Pass the calories **rounded down to one decimal place** as the `stat` prop
+      - [ x] Pass the string of `calories` as the `label` prop
+      - [ x] Pass the `category` as the `substat` prop
   - [ ] Inside an element with the class name of `per-day`, it should:
     - [ ] Render the text: `"Total Calories Per Day` inside an `h4` element
     - [ ] For each item in the `totalCaloriesPerDay` array, render a `SummaryStat` component.
@@ -374,7 +381,7 @@ Here are the pieces of functionality that should be built out for the backend:
     - [x ] `DATABASE_PORT`
     - [ x] `DATABASE_NAME` - (set to `lifetracker`)
     - [ x] `DATABASE_TEST_NAME` - (set to `lifetracker_test`)
-  - [ ]x Add a `config.test.js` file
+  - [ x] Add a `config.test.js` file
     - [ ] Write tests that check to make sure that:
       - [ ] `process.env.NODE_ENV` is set to `test` when the test suite is run
       - [ ] There is an `IS_TESTING` variable that is exported, which should only be true if `process.env.NODE_ENV` is set to `test`
