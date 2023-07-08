@@ -41,31 +41,7 @@ const SleepForm = ({ userId }) => {
     }
   };
 
-  //mkae use effect that queries sleep data
-  // useEffect(() => {
-  //   const SleepData = () => {
-  //     // make axios call axios.get
-  //     // get the endpoint (end time and start time)
-  //     // set useState for SleepData
-  //     //log it in html w/ Sleepdata variable
 
-  //     if (
-
-  //       )
-  //        {
-
-  //       if (     )
-  //       {
-
-  //       } else {
-
-  //       }
-  //     }
-  //   };
-
-  //   checkLoggedIn();
-  // }, []);
-  // Form submit handler
   const handleSubmit = async (e) => {
     // Send a POST request to add a new sleep entr
     e.preventDefault();
@@ -98,31 +74,6 @@ const SleepForm = ({ userId }) => {
     fetchSleepData();
   }, []);
 
-  // axios.post HERE-----
-  // try {
-  //   const response = await fetch("http://localhost:3001/api/sleep", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ start_time, end_time, userId  }),
-  //     //user_id
-  //   });
-
-  //   const data = await response.json();
-
-  //     //define this
-  //     console.log(data); //optional - display a success message
-
-  //     //Login failed
-  //     setLoginError(data.message);
-  //     console.log(data.message); //optional - display error message
-
-  // } catch (error) {
-  //   console.error("Error:", error);
-  // }
-
-  // axios.get HERE-----
 
   console.log("user id: ", userId);
   console.log("Start Time:", start_time);
@@ -159,33 +110,13 @@ const SleepForm = ({ userId }) => {
           <h1>Sleep Log</h1>
           <p> Start Time: {start_time} </p>
           <p> End Time: {end_time} </p>
-        </div>
-      </form>
       {
         sleepEntries.map( sleepEntry => <h1 style={{ background: "black", color: "white", padding: "30px"}} >{sleepEntry.start_time}, {sleepEntry.end_time}</h1> )
       }
+        </div>
+      </form>
     </>
   );
 };
 
 export default SleepForm;
-
-{
-  /* <h2>Sleep Entries</h2>
-<ul>
-  {sleepEntries.map((entry) => (
-    <li key={entry.id}>
-      Start Time: {entry.start_time} - End Time: {entry.end_time}
-    </li>
-  ))}
-</ul>
-
-<h2>Sleep Data</h2>
-<ul>
-  {SleepData.map((data) => (
-    <li key={data.id}>
-      {/* Display Sleep Data */
-}
-//     </li>
-//   ))}
-// </ul> */}

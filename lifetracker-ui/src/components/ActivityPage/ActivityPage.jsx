@@ -1,10 +1,10 @@
 import React from 'react'
-
+import ActivityFeed from "../ActivityFeed/ActivityFeed"
 function ActivityPage() {
   return (
     <div className= "activity">
 
-      <h1> ActivityPage </h1>
+      <ActivityFeed/>
 
     </div>
   )
