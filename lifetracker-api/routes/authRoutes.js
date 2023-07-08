@@ -34,9 +34,24 @@ router.post("/register", async (req, res) => {
     const values = [username, hashedPassword, first_name, last_name, email];
     const result = await pool.query(createUserQuery, values);
 
+
+
+    //token format 
+
+      const token = jwt.sign(
+      {userId: result.rows[0].id, username: result.rows[0].name},
+      "secret-fun",
+      {
+        expiresIn: "1h",
+      }
+    );
+
     //if all this works and no error - Status code 201 - successful entry
     res.status(201).json({
       message: "User registered successfully",
+
+      //passes the token as a response for a new uses 
+      token: token,
       user: result.rows[0],
     });
   } catch (error) {
@@ -76,7 +91,7 @@ router.post("/login", async (req, res) => {
 
     //Generate and sign JWT token, store secret-key in .env
     const token = jwt.sign({ userId: user.id }, "secret-key-unique", {
-      expiresIn: "1h",
+      expiresIn: "30d",
     });
 
     res.status(200).json({
