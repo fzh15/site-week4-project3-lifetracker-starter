@@ -1,14 +1,11 @@
 import "./App.css";
 import * as React from "react";
-import Cookies from "js-cookie";
 import jwtDecode from "jwt-decode";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import LoginForm from "../LoginForm/LoginForm";
 import Landing from "../Landing/Landing";
 import LoginPage from "../LoginPage/LoginPage";
-import Home from "../Home/Home";
 import RegistrationPage from "../RegistrationPage/RegistrationPage";
 import ActivityPage from "../ActivityPage/ActivityPage";
 import NutritionPage from "../NutritionPage/NutritionPage";
@@ -21,7 +18,17 @@ function App() {
 
 const[isLoggedIn, setisLoggedIn]= useState(false)
 const[LoggedError, setLoginError]= useState("")
-const[userName, setUserName] = useState("")
+const [userId, setUserId] = useState()
+
+//this is from the Navlinks compontent where I also define logoutUser
+const logoutUser= ()=>{
+  //should remove `lifetracker_`
+  localStorage.removeItem(`lifetracker_token`);
+  setisLoggedIn(false)
+  // window.location.reload(); //refreshs the pages 
+}
+
+
 
   const AccessForbidden = () => {
     return (
@@ -32,15 +39,13 @@ const[userName, setUserName] = useState("")
     );
   };
   
-  
   useEffect(() => {
     const checkLoggedIn = () => {
-      // const token = Cookies.get("token");
       const token = localStorage.getItem("lifetracker_token");
-      console.log(token)
       if (token) {
         const decodedToken = jwtDecode(token);
-        setUserName(decodedToken.userName); //get username
+        setUserId(decodedToken.userId); //get username
+
         if (decodedToken.exp * 1000 > Date.now()) {
           setisLoggedIn(true);
         } else {
@@ -65,35 +70,6 @@ const[userName, setUserName] = useState("")
   };    
 
 
-  // const handleLogin = async (email, password) => {
-  //   try {
-  //     const response = await fetch("http://localhost:3001/api/auth/login", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ email, password }),
-  //     });
-  
-  //     const data = await response.json();
-  
-  //     if (response.ok) {
-  //       const { token } = data; // Access 'token' from 'data' object
-  //       Cookies.set("token", token); // Set the token as a cookie
-  //       // Successful Login
-  //       setisLoggedIn(true);
-  //       setLoginError("");
-  //       console.log(data.message); // Optional - display a success message
-  //     } else {
-  //       // Login failed
-  //       setLoginError(data.message);
-  //       console.log(data.message); // Optional - display error message
-  //     }
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // };
-
 const handleLogin = async (email, password) => {
   try {
     const response = await fetch("http://localhost:3001/api/auth/login", {
@@ -108,11 +84,13 @@ const handleLogin = async (email, password) => {
     console.log(data, response)
     if (response.ok) {
       const { token } = data;
-      // Cookies.set("token", token); // Set the token as a cookie
       localStorage.setItem("lifetracker_token", token)
       //Successful Login
       setisLoggedIn(true);
       setLoginError(""); 
+      // setUserId(response.data.user.id)
+      //gives hte values for usere id that then i can use in out files to do it 
+
       //define this 
       console.log(data.message); //optional - display a success message
     } else {
@@ -144,14 +122,14 @@ const onRegister= async (first_name, last_name, username, email, password) => {
     const data = await response.json();
 
     if (response.ok) {
-      const { token } = response.data;
-      Cookies.set("token", token); // Set the token as a cookie
+      console.log(response); //optional - display a success message
+      const { token } = response;
       //Registration successful
       setisLoggedIn(true);
-      console.log(data.message); //optional - display a success message
     } else {
+      logoutUser();
       //REgistration failed
-      console.log(data.message); //optional - display error meesage
+      // console.log(data.message); //optional - display error meesage
     }
   } catch (error) {
     console.error("Error: ", error);
@@ -188,7 +166,7 @@ const onRegister= async (first_name, last_name, username, email, password) => {
             />
              <Route
             path="/sleep/*"
-            element={isLoggedIn ? <SleepPage /> : <AccessForbidden />}
+            element={isLoggedIn ? <SleepPage userId = {userId} /> : <AccessForbidden />}
             />
              <Route
             path="/exercise/*"

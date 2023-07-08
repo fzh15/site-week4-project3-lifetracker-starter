@@ -2,7 +2,11 @@ import React from 'react'
 
 function ActivityPage() {
   return (
-    <div>ActivityPage</div>
+    <div className= "activity">
+
+      <h1> ActivityPage </h1>
+
+    </div>
   )
 }
 
